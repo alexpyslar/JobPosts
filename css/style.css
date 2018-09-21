@@ -1,0 +1,79 @@
+body {
+    font-family: Verdana;
+    color: #aaaaaa;
+    font-size: 14px;
+}
+* {
+    box-sizing: border-box;
+}
+.header, .footer, .main {
+    margin: 0 auto;
+    width: 60%;
+    background-color: #e5e5e5;
+}
+.main {
+    padding: 5px;
+    margin-top: 5px;
+}
+.cell {
+    background-color: #e5e5e5;
+    display: block;
+    width: 100%;
+    clear: both;
+    height: 100px;
+    box-shadow: 1px 1px 1px;
+}
+.cell:not(:first-child), .footer {
+    margin-top: 7px;
+}
+.cell:hover {
+    opacity: .7;
+    cursor: pointer;
+}
+.cell-part-left, .cell-part-center, .cell-part-right {
+    min-height: 100px;
+    float: left;
+}
+.cell-part-left, .cell-part-right {
+    width: 25%;
+}
+.cell-part-left, .cell-part-center {
+    background-color: #ffffff;
+}
+.cell-part-center, .cell-part-right {
+    padding: 0 8px;
+}
+.cell-part-left {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.cell-part-center {
+    width: 50%;
+}
+.cell-part-right {
+    color: #ffffff;
+    background-color: #88c829;
+}
+.cell-part-center p, .cell-part-right p {
+    vertical-align: middle;
+}
+.cell-part-center p {
+    color: black;
+}
+.header, .footer {
+    padding: 15px;
+    text-align: center;
+}
+@media only screen and (max-width: 1024px) {
+    /* For tablets: */
+    .header, .main, .footer {
+        width: 80%;
+    }
+}
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .header, .main, .footer {
+        width: 100%;
+    }
+}

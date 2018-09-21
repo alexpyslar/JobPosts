@@ -1,0 +1,30 @@
+<body>
+<?php
+$jobs = new Jobs();
+$jobPosts = $jobs->getJobs();
+?>
+<div class="main">
+    <?php if (is_array($jobPosts)): ?>
+        <?php foreach ($jobPosts as $key => $post): ?>
+            <div class="cell" onclick="location.href='<?php echo $post['applyUrl']; ?>'">
+                <div class="cell-part-left" style="background-image: url('<?php echo $post['logo']; ?>') "></div>
+                <div class="cell-part-center">
+                    <p>
+                        <strong>Name:</strong> <?php echo $post['name']; ?><br>
+                        <strong>Title:</strong> <?php echo $post['title']; ?>
+                    </p>
+                </div>
+                <div class="cell-part-right">
+                    <p>
+                        <strong>From:</strong> <?php echo $post['startDate']; ?><br>
+                        <strong>To:</strong> <?php echo $post['endDate']; ?>
+                    </p>
+                </div>
+            </div>
+        <?php endforeach; ?>
+    <?php else: ?>
+        <div class="cell">
+            <?php echo $jobPosts; ?>
+        </div>
+    <?php endif; ?>
+</div>
